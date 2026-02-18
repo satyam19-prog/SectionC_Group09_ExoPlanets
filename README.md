@@ -27,40 +27,27 @@
 
 ## 🧠 Project Overview
 
-The discovery of exoplanets (planets outside our solar system) has accelerated over the past few decades due to advancements in observational technology and detection methods. However, exoplanet datasets are heavily influenced by **observational bias, method feasibility, and technological constraints**.
+The discovery of exoplanets (planets outside our solar system) has accelerated due to advances in detection technologies. However, historical exoplanet datasets are strongly influenced by **observational bias, detection feasibility, and technological limitations**.
 
-This project analyzes historical exoplanet discovery data to identify:
-
-- Which detection methods are most effective  
-- How technology impacts discovery growth  
-- What types of planets are over- or under-represented  
-- Why discovery outcomes differ across methods  
-
-The project follows an **industry-style analytics workflow**, transforming raw scientific data into **actionable insights** using structured data cleaning, KPI design, exploratory analysis, dashboarding, and recommendations.
+This project analyzes historical exoplanet data to:
+- Evaluate discovery efficiency across methods
+- Understand technology-driven discovery trends
+- Identify bias in detected planet populations
+- Support data-driven decision-making for future space missions
 
 ---
 
-## 🎯 Objectives
+## 📂 Repository Structure (Mandatory)
 
-- Prepare raw astronomical data for reliable analysis  
-- Identify discovery efficiency differences across detection methods  
-- Analyze technology-driven discovery trends  
-- Highlight observational bias in detected exoplanets  
-- Build an interactive dashboard for decision support  
-- Provide data-backed recommendations for future missions  
-
----
-
-## 📂 Project Structure
 ```
-├── Raw Dataset/
+├── RawDataset/
 │ └── exoplanets_raw.csv
 │
-├── Cleaned Dataset/
+├── Cleaned/
 │ ├── exoplanets_cleaned.csv
 │ └── Cleaning_Log.md
 │
-├── Analysis & Pivot Tables/
+├── Calculations_Pivots/
 │ ├── pivot_tables.xlsx
 │ └── derived_columns.csv
 │
@@ -68,129 +55,133 @@ The project follows an **industry-style analytics workflow**, transforming raw s
 │ └── Exoplanet_Dashboard.png
 │
 ├── Documentation/
-│ ├── Project_Report.pdf
-│ └── Contribution_Matrix.pdf
+│ └── Project_Report.pdf
 │
 ├── Presentation/
 │ └── Final_Presentation.pptx
 │
 └── README.md
 ```
+
 ---
 
-## 🧹 Data Cleaning & Preparation
+## 📘 Data Dictionary (Key Columns)
 
-The raw dataset contained several challenges common to scientific data:
+| Column Name | Description |
+|------------|-------------|
+| Planet Name | Unique identifier of the exoplanet |
+| Mass (MJ) | Planet mass in Jupiter masses |
+| Radius (RJ) | Planet radius in Jupiter radii |
+| Orbital Period (days) | Time taken to complete one orbit |
+| Distance (ly) | Distance from Earth in light years |
+| Discovery Method | Technique used for detection |
+| Discovery Year | Year of confirmation |
+| Host Star Mass | Mass of the host star |
+| Temperature (K) | Estimated planetary temperature |
 
-- Scientific uncertainty values (± ranges, citations)
+Derived analytical columns:
+- Mass Category (Small / Medium / Giant)
+- Period Category (Ultra-Short / Short / Long)
+- Distance Category (Near / Mid / Far)
+- Host Star Type (Cool / Sun-like / Hot)
+
+---
+
+## 🧹 Data Cleaning Notes
+
+The raw dataset contained:
+- Scientific uncertainty values (±, ranges, citations)
 - Mixed numeric and text formats
-- Inconsistent categorical labels
+- Inconsistent categorical naming
 - High missing-value density
-- Observational noise and bias
 
-### Cleaning Actions Performed
+### Cleaning Actions
 - Extracted best-estimate numeric values
-- Removed uncertainty ranges and textual clutter
-- Standardized units (Mass, Radius, Distance, Temperature)
-- Created derived analytical categories (Mass, Distance, Period, Star Type)
+- Removed uncertainty ranges and symbols
+- Standardized measurement units
+- Created analytical categories
 - Ensured planet-level uniqueness
-- Documented all steps in a data dictionary
 
-All cleaning and transformations were performed in **Google Sheets**, as required by the course.
-
----
-
-## 📊 KPIs & Analytical Framework
-
-The analysis was guided by decision-oriented KPIs:
-
-- Discovery count by detection method  
-- Discovery trend over time  
-- Average planet mass by discovery method  
-- Distance vs discovery feasibility  
-- Detection bias across orbital and stellar characteristics  
-
-These KPIs focus on **efficiency, bias, and scalability**, rather than simple descriptive statistics.
+All cleaning steps were documented in `Cleaning_Log.md`.
 
 ---
 
-## 📈 Dashboard Overview
+## 📊 Key Insights & Statistics
 
-The final dashboard provides two analytical layers:
+- **Transit method** accounts for the majority of exoplanet discoveries
+- Discovery volume increased sharply after **2005**, driven by technology
+- **Large and close-in planets** are over-represented
+- Imaging methods detect **fewer but massive and distant planets**
+- Detection diversity decreases significantly with distance
+
+---
+
+## 📈 Dashboard Summary
+
+The dashboard provides:
 
 ### Executive View
-- Total exoplanets discovered  
-- Average distance from Earth  
-- Average host star temperature  
-- High-level discovery patterns  
+- Total exoplanets discovered
+- Average distance from Earth
+- Average host star temperature
 
 ### Operational View
-- Method-wise discovery dominance  
-- Bias across mass, distance, and orbital period  
-- Time-based discovery evolution  
-- Interactive filters for detailed drill-down analysis  
-
-The dashboard supports both **strategic overview** and **deep analytical exploration**.
+- Discovery method dominance
+- Bias across mass, distance, and orbital period
+- Year-wise discovery trends
+- Interactive filters for drill-down analysis
 
 ---
 
-## 💡 Key Insights
+## 🖼️ Dataset Analysis Screenshots
 
-- Transit-based methods dominate discoveries due to high scalability  
-- Discovery growth is driven primarily by technological advancements  
-- Large and close-in planets are over-represented  
-- Each detection method reveals a different subset of planets  
-- Distance strongly limits detection diversity  
+Screenshots included in the `Dashboard/` folder:
+- Discovery Method Dominance
+- Discovery Trend Over Time
+- Mass vs Discovery Method
+- Distance vs Detection Method
+
+These visuals support all insights discussed in the project.
 
 ---
 
 ## 🧭 Recommendations
 
-- Prioritize scalable transit survey missions  
-- Use radial velocity techniques for targeted confirmation  
-- Reserve imaging methods for distant, massive exoplanets  
-- Invest in higher sensitivity detection instruments  
-- Adopt hybrid detection strategies to reduce observational bias  
+- Prioritize scalable transit survey missions
+- Use radial velocity for confirmation
+- Reserve imaging for distant massive planets
+- Invest in high-sensitivity instruments
+- Adopt hybrid detection strategies
 
 ---
 
 ## ⚠️ Limitations & Future Scope
 
 ### Limitations
-- Dataset reflects observational and technological bias  
-- Incomplete physical parameters for many exoplanets  
-- Limited coverage of post-2009 discoveries  
+- Observational and technological bias
+- Incomplete physical parameters
+- Limited post-2009 data
 
 ### Future Scope
-- Integration of newer mission data (Kepler, TESS, JWST)  
-- Detection probability and bias-correction modeling  
-- Advanced habitability analysis  
-- Real-time dashboard expansion  
+- Integration of Kepler, TESS, JWST datasets
+- Bias-correction modeling
+- Advanced habitability analysis
+- Real-time dashboard updates
 
 ---
 
 ## 🛠️ Technologies Used
 
-- Google Sheets (Data cleaning, pivots, KPIs, dashboard)  
-- Pivot Tables & Spreadsheet Functions  
-- Looker Studio (optional visualization layer)  
-- Markdown & PDF for documentation  
-- PowerPoint for final presentation  
-
----
-
-## 🚀 Getting Started
-
-1. Review the raw dataset to understand original data complexity  
-2. Follow the Cleaning_Log.md for transformation logic  
-3. Explore pivot tables in the Analysis folder  
-4. View the dashboard snapshot for insights  
-5. Refer to the Project Report for full methodology  
+- Google Sheets (Cleaning, Pivots, Dashboard)
+- Spreadsheet Functions & Pivot Tables
+- Looker Studio (optional)
+- Markdown & PDF
+- PowerPoint
 
 ---
 
 ## 🏁 Conclusion
 
-This project demonstrates that exoplanet discovery data reflects **observational constraints and technological feasibility** more than true planetary abundance. By explicitly acknowledging bias and limitations, the analysis provides **realistic, decision-oriented insights** that can guide future space exploration strategies.
+This project demonstrates that exoplanet discovery patterns are shaped more by **technology and feasibility** than by true planetary abundance. By acknowledging bias and constraints, the analysis provides realistic and decision-oriented insights for future space exploration strategies.
 
 ---
