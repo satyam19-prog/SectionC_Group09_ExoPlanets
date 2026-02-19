@@ -3,7 +3,7 @@
 
 ---
 
-## 📌 Project Information
+## Project Information
 
 - **Course:** Data Visualization and Analytics (DVA)  
 - **Group Number:** 09  
