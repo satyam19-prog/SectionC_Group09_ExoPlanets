@@ -84,23 +84,25 @@ Derived analytical columns:
 - Period Category (Ultra-Short / Short / Long)
 - Distance Category (Near / Mid / Far)
 - Host Star Type (Cool / Sun-like / Hot)
-
+- Habitability Flag (Binary): 1 (Potentially Habitable) / 0 (Not Habitable)
 ---
 
 ## Data Cleaning Notes
 
 The raw dataset contained:
 - Scientific uncertainty values (±, ranges, citations)
-- Mixed numeric and text formats
+- Mixed numeric and text formats (e.g., commas in numbers)
 - Inconsistent categorical naming
 - High missing-value density
+- Duplicate records
 
 ### Cleaning Actions
-- Extracted best-estimate numeric values
-- Removed uncertainty ranges and symbols
-- Standardized measurement units
-- Created analytical categories
-- Ensured planet-level uniqueness
+- Extracted best-estimate numeric values using Regex
+- Removed uncertainty ranges, symbols, and text citations
+- Standardized categorical text and removed trailing spaces
+- Imputed missing values using Median (numeric) and Mode (categorical)
+- Engineered analytical categories (e.g., Mass, Period, Distance, Habitability)
+- Ensured planet-level uniqueness by removing duplicates
 
 All cleaning steps were documented in `Cleaning_Log.md`.
 
